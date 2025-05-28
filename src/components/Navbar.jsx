@@ -5,7 +5,7 @@ import { FaTasks } from "react-icons/fa";
 function Navbar() {
   return (
     <>
-      <nav className='navbar hidden md:block mb-3 text-white bg-blue-800 shadow-lg border-b-2 border-red-300'>
+      <nav className='navbar hidden md:block mb-3 text-white bg-blue-800 border-b-2 border-red-300'>
         <div className='container mx-auto px-4 py-4 flex gap-3 justify-start items-center'>
           <FaTasks className='text-white text-4xl' />
           <Link
@@ -16,7 +16,7 @@ function Navbar() {
         </div>
       </nav>
 
-      <nav className='md:hidden bg-blue-800 shadow-lg border-b-2 border-red-400'>
+      <nav className='md:hidden bg-blue-800 border-b-2 border-red-400'>
         <div className='container mx-auto px-4 py-4 flex justify-between items-center'>
           <Link to='/' className=''>
             <FaTasks className='text-white text-4xl' />

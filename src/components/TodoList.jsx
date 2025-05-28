@@ -53,7 +53,7 @@ function TodoList() {
 
   const search = () => {
     const filtered = tasks.filter((t) =>
-      t.task && t.task.toLowerCase().includes(searchVal.toLowerCase())
+      t.task.toLowerCase().includes(searchVal.toLowerCase())
     );
     setFilteredTask(filtered);
     if (filtered.length === 0 && searchVal) {
@@ -87,34 +87,35 @@ function TodoList() {
               </div>
             </div>
             <div className='max-w-md bg-white border-2 rounded-lg shadow-lg p-6 mb-8'>
-              <h1 className='text-3xl font-bold text-center mb-6 text-blue-800'>
+              <h1 className='text-2xl font-bold text-center mb-6 uppercase text-blue-800'>
                 Add Your task
               </h1>
               <form className='space-y-4'>
                 <input
                   type='text'
-                  placeholder='task'
+                  placeholder='Task'
                   value={task}
                   onChange={(e) => setTask(e.target.value)}
                   className='w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
                 />
                 <button
                   onClick={AddTask}
-                  className='w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200'>
+                  className='w-full bg-blue-500 text-white py-2 uppercase px-4 rounded-md hover:bg-blue-600 transition duration-200'>
                   Add task
                 </button>
               </form>
             </div>
           </div>
           <div className='flex-1'>
+
             {filteredTask.length > 0 ? (
               <ul className='grid grid-cols-1 gap-6'>
                 {filteredTask.map((t) => (
                   <li
                     key={t.id}
-                    className='bg-white rounded-lg shadow-lg overflow-hidden'>
+                    className='bg-white rounded-lg   border-2 shadow-lg overflow-hidden'>
                     <div className='p-6'>
-                      <h3 className='text-xl font-semibold text-gray-800 mb-4'>
+                      <h3 className='text-xl font-semibold text-blue-600 mb-4'>
                         {t.task}
                       </h3>
 
