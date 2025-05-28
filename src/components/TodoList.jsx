@@ -9,7 +9,7 @@ function TodoList() {
   function AddTask(e) {
     e.preventDefault();
     if (!task) {
-      toast.error('Please fill all fields');
+      toast.error('Please add a task');
       return;
     }
     axios.post(url, { task: task }).then((response) => {
@@ -119,7 +119,7 @@ function TodoList() {
                         {t.task}
                       </h3>
 
-                      <button onClick={() => { del(t.id); }} className='py-2 px-3 rounded-2xl text-white bg-red-700'>Delete</button>
+                      <button onClick={() => { del(t.id); }} className='py-2 px-2 rounded-2xl text-white bg-red-700'>Delete</button>
                     </div>
                   </li>
                 ))}
