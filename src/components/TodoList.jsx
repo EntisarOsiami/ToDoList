@@ -34,18 +34,20 @@ function TodoList() {
   }, [task]);
 
   const del = (id) => {
-    axios
-      .delete(`${url}/${id}`)
-      .then((response) => {
-        if (response) {
-          toast.success('task deleted successfully');
-          setTasks(tasks.filter((t) => t.id !== id));
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-        toast.error('Failed to delete task');
-      });
+    if (confirm('are you sure you want to delete this task?')) {
+      axios
+        .delete(`${url}/${id}`)
+        .then((response) => {
+          if (response) {
+            toast.success('task deleted successfully');
+            setTasks(tasks.filter((t) => t.id !== id));
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          toast.error('Failed to delete task');
+        });
+    }
   };
 
   const [searchVal, setSearchVal] = useState('');
